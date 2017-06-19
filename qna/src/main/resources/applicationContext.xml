@@ -9,6 +9,7 @@
 	<!-- 모든위치에 있는 application-properties.xml 파일을 읽어서 key/value 쌍으로 가지고 있으라고 설정 -->
 	<context:property-placeholder location="classpath*:application-properties.xml"/>
 	
+	<!-- 톰캣 기동시 PostConstruct 어노테이션 사용시 필요 -->
 	<context:annotation-config/>
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" 
