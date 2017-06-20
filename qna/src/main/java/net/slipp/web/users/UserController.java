@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,7 +24,9 @@ public class UserController {
 	private UserDao userDao;
 	
 	@RequestMapping("/form")
-	public String form() {		
+	public String form(Model model) {
+		//form.jsp에서 modelAttribute="user" 로  호출하여 사용
+		model.addAttribute("user", new User());
 		return "users/form";
 	}
 	
