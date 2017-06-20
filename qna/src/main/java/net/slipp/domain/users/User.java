@@ -18,8 +18,8 @@ public class User {
 	@Expose(serialize = false)
 	@NotNull
 	@Size(min = 4, max = 12)
-	private
-	String password;
+	private String password;
+	
 	@Expose
 	@NotNull
 	@Size(min = 2, max = 10)
