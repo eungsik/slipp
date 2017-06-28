@@ -8,6 +8,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import net.slipp.dao.users.UserDao;
+import net.slipp.domain.users.Authenticate;
 import net.slipp.domain.users.User;
 
 import org.junit.Test;
@@ -53,6 +54,34 @@ public class UserController {
 		userDao.create(user);
 		logger.debug("Database : {}", userDao.findById(user.getUserId()));
 		
-		return "users/form";
+		//첫 메인화면으로
+		return "redirect:/";
+	}
+	
+	@RequestMapping("/login/form")
+	public String loginForm(Model model) {
+		model.addAttribute("authenticate", new Authenticate());
+		
+		return "users/login";
+	}
+	
+	@RequestMapping("/login")
+	public String login(@Valid Authenticate authenticate, BindingResult bindingResult) {
+		
+		if(bindingResult.hasErrors()) {
+			return "users/login";
+		}
+		
+		User user = userDao.findById(authenticate.getUserId());
+		if (user == null) {
+			
+		}
+		
+		if (user.getPassword().equals(authenticate.getPassword())) {
+			
+		}
+		
+		
+		return "users/login";
 	}
 }

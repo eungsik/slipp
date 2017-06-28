@@ -10,7 +10,7 @@
 
 
 
-	<!-- 스프링 설정 1 특정 디렉토리에 있는 컨트롤러클래스 파일만 스캔하여 컨트롤러로 인식되게 설정 -->
+	<!-- 스프링 설정 1 특정 디렉토리에 있는 컨트롤러 클래스 파일만 스캔하여 컨트롤러로 인식되게 설정 -->
 	<context:component-scan base-package="net.slipp.web"></context:component-scan>
 	
 	<!-- 스프링 설정 2 컨트롤러를 추가할 때 어노테이션 기반으로 설정 -->
@@ -25,5 +25,10 @@
 	<mvc:resources location="/images/" mapping="/images/**" />
 	<mvc:resources location="/stylesheets/" mapping="/stylesheets/**" />
 	<mvc:resources location="/javascripts/" mapping="/javascripts/**" />
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages"
+		p:defaultEncoding="UTF-8"
+	/>
 
 </beans>

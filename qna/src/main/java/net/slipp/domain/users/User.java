@@ -6,22 +6,23 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.google.gson.annotations.Expose;
 
 public class User {
 	@Expose
-	@NotNull
+	@NotEmpty
 	@Size(min = 4, max = 12)
 	private String userId;
 	
 	@Expose(serialize = false)
-	@NotNull
+	@NotEmpty
 	@Size(min = 4, max = 12)
 	private String password;
 	
 	@Expose
-	@NotNull
+	@NotEmpty
 	@Size(min = 2, max = 10)
 	private String name;
 	

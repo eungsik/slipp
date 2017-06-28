@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SLiPP</title>
+<title>HIST</title>
 
 <%@ include file="./commons/_header.jspf" %>
 
@@ -14,7 +14,7 @@
 	
 	<header class="jumbotron subhead" id="overview">
 	<div class="container">
-		<h1>SLiPP</h1>
+		<h1>welcome HIST!</h1>
 		<p class="lead">Sustaninable Life, Programming, Programmer</p>
 	</div>
 	</header>
